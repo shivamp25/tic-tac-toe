@@ -16,6 +16,4 @@ describe('WelcomeScreen', () => {
         const container = mount(<WelcomeScreen />);
         expect(container.find('.WelcomeScreen').length).toBe(1);
     });
-
-
 });
