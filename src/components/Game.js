@@ -16,10 +16,9 @@ export default class Game extends Component {
             isUserTurn: true,
             userScore: 0,
             computerScore: 0,
-
-
     };
         this.assignMark = this.assignMark.bind(this);
+        this.move = this.move.bind(this);
     }
 
     assignMark(userMark, computerMark) {
@@ -28,9 +27,14 @@ export default class Game extends Component {
         this.setState({ welcomeScreen: false });
     }
 
-    render() {
-        console.log(this.state);
+    move(index) {
+        let userMark = this.state.userMark;
+        let currentSquares = this.state.squares.slice();
+        currentSquares[index] = userMark;
+        this.setState({squares: currentSquares});
+    }
 
+    render() {
         if (this.state.welcomeScreen) {
             return (
                 <WelcomeScreen className="WelcomeScreen" select={this.assignMark}/>
@@ -39,8 +43,8 @@ export default class Game extends Component {
         else return (
             <div className="Game">
                 <Information text={this.state.information} />
-                <Board isUserTurn={this.state.isUserTurn} squares={this.state.squares } />
-                <Score computerScore={this.state.computerScore} userScore={this.state.userScore}/>
+                <Board isUserTurn={this.state.isUserTurn} squares={this.state.squares} move={this.move} />
+                <Score computerScore={this.state.computerScore} userScore={this.state.userScore} />
             </div>
         );
     }

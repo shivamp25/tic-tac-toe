@@ -27,17 +27,18 @@ const Button = styled.button`font-size: 65px;
     border-radius: 5px;
     color: #fff;
 `;
-const Board = ({ squares, isUserTurn }) => {
+const Board = ({ squares, isUserTurn, move }) => {
 
     let [zero, one, two, three, four, five, six, seven, eight] = squares;
     // let [zero, one, two, three, four, five, six, seven, eight] = ['', 'O', '', '', 'X', '', '', ''];
 
     Board.propTypes = {
         squares: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
-        isUserTurn: PropTypes.bool
+        isUserTurn: PropTypes.bool,
+        move: PropTypes.func,
     };
 
-    const selectSquare = (index) => console.log(index);
+    const selectSquare = (index) => move(index);
 
     return (
         <Div className="Board container">
