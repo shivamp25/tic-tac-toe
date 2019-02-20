@@ -18,5 +18,10 @@ export default class Game extends Component {
               <WelcomeScreen className="WelcomeScreen"/>
             );
         }
+        else return (
+            <div className="Game">
+
+            </div>
+        );
     }
 }
