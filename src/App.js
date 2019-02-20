@@ -1,12 +1,12 @@
 import React, {Component} from 'react';
 import './App.css';
-import WelcomeScreen from './components/WelcomeScreen';
+import Board from './components/Board';
 
 class App extends Component {
     render() {
         return (
             <div className="App">
-                <WelcomeScreen/>
+                <Board/>
             </div>
         );
     }
