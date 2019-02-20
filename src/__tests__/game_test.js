@@ -5,3 +5,12 @@ import enzyme from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 enzyme.configure({ adapter: new Adapter() });
 
+describe('Game', () => {
+
+    it('should be able to display WelcomeScreen when welcomeScreen state is true ', () => {
+        const container = shallow(<Game />);
+        container.setState({ welcomeScreen: true });
+        expect(container.is('.WelcomeScreen')).toBe(true);
+    });
+
+});
