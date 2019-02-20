@@ -13,7 +13,7 @@ const Information = ({ text }) => {
     };
 
     return (
-        <P className='Information'> {text} </P>
+        <P className='Information'>{text}</P>
     );
 };
 
