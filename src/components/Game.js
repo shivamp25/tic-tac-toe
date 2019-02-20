@@ -10,8 +10,15 @@ export default class Game extends Component {
         this.state = {
             welcomeScreen: true,
             userMark: '',
-            computerMark: ''
-        };
+            computerMark: '',
+            information: 'Your Move!',
+            squares: ['', '', '', '', '', '', '', '', ''],
+            isUserTurn: true,
+            userScore: 0,
+            computerScore: 0,
+
+
+    };
         this.assignMark = this.assignMark.bind(this);
     }
 
@@ -31,7 +38,9 @@ export default class Game extends Component {
         }
         else return (
             <div className="Game">
-
+                <Information text={this.state.information} />
+                <Board isUserTurn={this.state.isUserTurn} squares={this.state.squares } />
+                <Score computerScore={this.state.computerScore} userScore={this.state.userScore}/>
             </div>
         );
     }
