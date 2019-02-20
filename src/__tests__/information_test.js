@@ -10,4 +10,10 @@ describe('Information', () => {
         const container = shallow(<Information text= "testing" />);
         expect(container.is('.Information')).toBe(true);
     });
+
+    it('should mount to the DOM ', () => {
+        const wrapper = mount(<Information text= "Mount on Dom" />);
+        expect(wrapper.find('.Information').hostNodes()).toHaveLength(1);
+    });
+
 });
