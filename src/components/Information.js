@@ -2,8 +2,19 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-const Information = () => {
+const P = styled.p`
+   text-align: center;
+   font-size: 30px;
+`;
 
+const Information = ({ text }) => {
+    Information.propTypes = {
+      text : PropTypes.string.isRequired
+    };
+
+    return (
+        <P className='Information'> {text} </P>
+    );
 };
 
 export default Information;
