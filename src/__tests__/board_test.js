@@ -18,4 +18,13 @@ describe('Board', () => {
         expect(wrapper.find('.Board').hostNodes()).toHaveLength(1);
     });
 
+    it('should be able to display the X and 0 correctly', () => {
+        const wrapper = mount(<Board squares={squares} />);
+        expect(wrapper.find('.btn7').hostNodes().text()).toBe('X');
+        expect(wrapper.find('.btn8').hostNodes().text()).toBe('O');
+        expect(wrapper.find('.btn0').hostNodes().text()).toBe('X');
+
+    });
+
+
 });
