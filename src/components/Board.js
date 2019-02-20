@@ -29,8 +29,8 @@ const Button = styled.button`font-size: 65px;
 `;
 const Board = ({ squares, isUserTurn }) => {
 
-    // let [zero, one, two, three, four, five, six, seven, eight] = squares;
-    let [zero, one, two, three, four, five, six, seven, eight] = ['', 'O', '', '', 'X', '', '', ''];
+    let [zero, one, two, three, four, five, six, seven, eight] = squares;
+    // let [zero, one, two, three, four, five, six, seven, eight] = ['', 'O', '', '', 'X', '', '', ''];
 
     Board.propTypes = {
         squares: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
