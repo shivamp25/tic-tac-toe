@@ -6,7 +6,7 @@ import Adapter from 'enzyme-adapter-react-16';
 enzyme.configure({ adapter: new Adapter() });
 
 describe('Board', () => {
-    const squares = ['', 'O', '', '', 'X', '', '', ''];
+    const squares = ['X', '', '', '', '', '', '', 'X', 'O'];
 
     it('should be selectable by class name ', () => {
         const container = shallow(<Board squares={squares} />);
@@ -21,7 +21,7 @@ describe('Board', () => {
     it('should be able to display the X and 0 correctly', () => {
         const wrapper = mount(<Board squares={squares} />);
         expect(wrapper.find('.btn7').hostNodes().text()).toBe('X');
-        expect(wrapper.find('.btn8').hostNodes().text()).toBe('O');
+        expect(wrapper.find('.btn0').hostNodes().text()).toBe('X');
         expect(wrapper.find('.btn0').hostNodes().text()).toBe('X');
 
     });

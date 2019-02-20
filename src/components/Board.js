@@ -39,19 +39,19 @@ const Board = ({ squares }) => {
     return (
         <Div className="Board container">
             <Row>
-                <Button>{zero}</Button>
-                <Button>{one}</Button>
-                <Button>{two}</Button>
+                <Button className="btn0">{zero}</Button>
+                <Button className="btn1">{one}</Button>
+                <Button className="btn2">{two}</Button>
             </Row>
             <Row>
-                <Button>{three}</Button>
-                <Button>{four}</Button>
-                <Button>{five}</Button>
+                <Button className="btn3">{three}</Button>
+                <Button className="btn4">{four}</Button>
+                <Button className="btn5">{five}</Button>
             </Row>
             <Row>
-                <Button>{six}</Button>
-                <Button>{seven}</Button>
-                <Button>{eight}</Button>
+                <Button className="btn6">{six}</Button>
+                <Button className="btn7">{seven}</Button>
+                <Button className="btn8">{eight}</Button>
             </Row>
         </Div>
     );
