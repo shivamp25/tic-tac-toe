@@ -12,8 +12,10 @@ describe('WelcomeScreen', () => {
         expect(container.is('.WelcomeScreen')).toBe(true);
     });
 
+    // have to redo it!
     it('should mount to DOM', function () {
-        const container = mount(<WelcomeScreen />);
-        expect(container.find('.WelcomeScreen').length).toBe(1);
+        const wrapper = mount(<WelcomeScreen />);
+        console.log(wrapper.find('.WelcomeScreen').debug());
+        expect(wrapper.find('.WelcomeScreen').length).toBe(1);
     });
 });
