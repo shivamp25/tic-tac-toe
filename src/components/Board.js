@@ -27,31 +27,61 @@ const Button = styled.button`font-size: 65px;
     border-radius: 5px;
     color: #fff;
 `;
-const Board = ({ squares }) => {
+const Board = ({ squares, isUserTurn }) => {
 
-    let [zero, one, two, three, four, five, six, seven, eight] = squares;
-    // let [zero, one, two, three, four, five, six, seven, eight] = ['', 'O', '', '', 'X', '', '', ''];
+    // let [zero, one, two, three, four, five, six, seven, eight] = squares;
+    let [zero, one, two, three, four, five, six, seven, eight] = ['', 'O', '', '', 'X', '', '', ''];
 
     Board.propTypes = {
-      squares : PropTypes.arrayOf(PropTypes.string.isRequired).isRequired
+        squares: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
+        isUserTurn: PropTypes.bool
     };
+
+    const selectSquare = (index) => console.log(index);
 
     return (
         <Div className="Board container">
             <Row>
-                <Button className="btn0">{zero}</Button>
-                <Button className="btn1">{one}</Button>
-                <Button className="btn2">{two}</Button>
+                <Button className="btn0"
+                        onClick={() => selectSquare(0)}
+                        disabled={!isUserTurn || zero !== ''}
+                >{zero}</Button>
+                <Button className="btn1"
+                        onClick={() => selectSquare(1)}
+                        disabled={!isUserTurn || one !== ''}
+                >{one}</Button>
+                <Button className="btn2"
+                        onClick={() => selectSquare(2)}
+                        disabled={!isUserTurn || two !== ''}
+                >{two}</Button>
             </Row>
             <Row>
-                <Button className="btn3">{three}</Button>
-                <Button className="btn4">{four}</Button>
-                <Button className="btn5">{five}</Button>
+                <Button className="btn3"
+                        onClick={() => selectSquare(3)}
+                        disabled={!isUserTurn || three !== ''}
+                >{three}</Button>
+                <Button className="btn4"
+                        onClick={() => selectSquare(4)}
+                        disabled={!isUserTurn || four !== ''}
+                >{four}</Button>
+                <Button className="btn5"
+                        onClick={() => selectSquare(5)}
+                        disabled={!isUserTurn || five !== ''}
+                >{five}</Button>
             </Row>
             <Row>
-                <Button className="btn6">{six}</Button>
-                <Button className="btn7">{seven}</Button>
-                <Button className="btn8">{eight}</Button>
+                <Button className="btn6"
+                        onClick={() => selectSquare(6)}
+                        disabled={!isUserTurn || six !== ''}
+                >{six}</Button>
+                <Button className="btn7"
+                        onClick={() => selectSquare(7)}
+                        disabled={!isUserTurn || seven !== ''}
+                >{seven}</Button>
+                <Button className="btn8"
+                        onClick={() => selectSquare(8)}
+                        disabled={!isUserTurn || eight !== ''}
+                >{eight}</Button>
             </Row>
         </Div>
     );
