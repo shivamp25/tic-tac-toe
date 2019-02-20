@@ -4,14 +4,24 @@ import styled from 'styled-components';
 
 const DivContainer = styled.div`
     margin: auto;
-    font-size: 30px;
+    max-width: 455px; 
+    font-size: 25px;
 `;
 
-const Div = styled.div``;
+const Div = styled.div`
+    margin: auto;
+    width: 300px;
+`;
 
-const P = styled.p``;
+const P = styled.p`
+    display: inline-block;
+    margin-left: 25px;
+`;
 
-const Count = styled.p``;
+const Count = styled.p`
+    display: inline-block;
+    margin-left: 15px;
+`;
 
 const Score = ({ computerScore, userScore }) => {
     Score.propTypes = {
