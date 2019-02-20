@@ -7,6 +7,12 @@ const DivContainer = styled.div`
     font-size: 30px;
 `;
 
+const Div = styled.div``;
+
+const P = styled.p``;
+
+const Count = styled.p``;
+
 const Score = ({ computerScore, userScore }) => {
     Score.propTypes = {
         computerScore: PropTypes.number.isRequired,
@@ -14,7 +20,14 @@ const Score = ({ computerScore, userScore }) => {
     };
 
     return (
-        <DivContainer className="Score" />
+        <DivContainer className="Score">
+            <Div>
+                <P> User: </P>
+                <Count className="userScore">{userScore}</Count>
+                <P> Computer: </P>
+                <Count className="computerScore">{computerScore}</Count>
+            </Div>
+        </DivContainer>
     );
 };
 export default Score;
