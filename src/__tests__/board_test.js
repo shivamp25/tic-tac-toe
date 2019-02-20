@@ -10,7 +10,12 @@ describe('Board', () => {
 
     it('should be selectable by class name ', () => {
         const container = shallow(<Board squares={squares} />);
-        expect(container.is('.container')).toBe(true);
+        expect(container.is('.Board')).toBe(true);
+    });
+
+    it('should mount to the DOM ', () => {
+        const wrapper = mount(<Board squares={squares} />);
+        expect(wrapper.find('.Board').hostNodes()).toHaveLength(1);
     });
 
 });
