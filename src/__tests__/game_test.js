@@ -13,4 +13,11 @@ describe('Game', () => {
         expect(container.is('.WelcomeScreen')).toBe(true);
     });
 
+    it('should be able to display Game class when welcomeScreen state is false ', () => {
+        const container = shallow(<Game />);
+        container.setState({ welcomeScreen: false });
+        expect(container.is('.Game')).toBe(true);
+    });
+
+
 });
