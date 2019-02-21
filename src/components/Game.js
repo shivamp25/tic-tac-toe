@@ -21,6 +21,8 @@ export default class Game extends Component {
         this.assignMark = this.assignMark.bind(this);
         this.userMove = this.userMove.bind(this);
         this.computerMove = this.computerMove.bind(this);
+        // this.tie = this.tie.bind(this);
+        // this.restart = this.restart.bind(this);
     }
 
     assignMark(userMark, computerMark) {
@@ -42,11 +44,12 @@ export default class Game extends Component {
         let userMark = this.state.userMark;
         let moveNumber = this.state.moveNumber;
 
+
     }
     render() {
         if (this.state.welcomeScreen) {
             return (
-                <WelcomeScreen className="WelcomeScreen" select={this.assignMark}/>
+                <WelcomeScreen className="WelcomeScreen" select={this.assignMark} />
             );
         }
         else return (

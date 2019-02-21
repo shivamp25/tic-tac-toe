@@ -19,5 +19,19 @@ describe('Game', () => {
         expect(container.is('.Game')).toBe(true);
     });
 
+    it('should be able to select Mark for Players', function () {
+        const wrapper = mount(<Game />);
+
+        wrapper.find('.xButton').hostNodes().prop('onClick')();
+        expect(wrapper.state().userMark).toBe('X');
+        expect(wrapper.state().computerMark).toBe('O');
+
+        wrapper.setState({ welcomeScreen: true });
+
+        wrapper.find('.oButton').hostNodes().prop('onClick')();
+        expect(wrapper.state().userMark).toBe('O');
+        expect(wrapper.state().computerMark).toBe('X');
+    });
+
 
 });
