@@ -19,9 +19,10 @@ describe('Score', () => {
     });
 
     it('should be able to display the correct score from props', () => {
-        const wrapper = mount(<Score computerScore ={5} userScore={4} />);
+        const wrapper = mount(<Score computerScore ={5} userScore={4} tieCount={2} />);
         expect(wrapper.find('.computerScore').hostNodes().text()).toBe("5");
         expect(wrapper.find('.userScore').hostNodes().text()).toBe("4");
+        expect(wrapper.find('.tieCount').hostNodes().text()).toBe("2");
     });
 
 });
