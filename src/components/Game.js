@@ -19,6 +19,7 @@ export default class Game extends Component {
             isUserStarts: true,
             userScore: 0,
             computerScore: 0,
+            tieCount: 0,
             moveNumber: 1
     };
         this.assignMark = this.assignMark.bind(this);
@@ -90,6 +91,7 @@ export default class Game extends Component {
 
     tie() {
         this.setState({information: 'Tie!!'});
+        this.setState({tieCount: this.state.tieCount + 1});
         setTimeout(this.restart, 2000);
     }
 
@@ -179,7 +181,7 @@ export default class Game extends Component {
             <div className="Game">
                 <Information text={this.state.information} />
                 <Board isUserTurn={this.state.isUserTurn} squares={this.state.squares} move={this.userMove} />
-                <Score computerScore={this.state.computerScore} userScore={this.state.userScore} />
+                <Score computerScore={this.state.computerScore} userScore={this.state.userScore} tieCount={this.state.tieCount}/>
             </div>
         );
     }

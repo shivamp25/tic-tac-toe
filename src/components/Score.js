@@ -10,7 +10,7 @@ const DivContainer = styled.div`
 
 const Div = styled.div`
     margin: auto;
-    width: 300px;
+    width: 400px;
 `;
 
 const P = styled.p`
