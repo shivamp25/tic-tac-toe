@@ -16,15 +16,17 @@ const WinningCalculation = (squares, userMark, computerMark) => {
         (square === userMark) ? computerMarkIndexes.push(index) : console.log(index);
     });
 
-    winningSequences.forEach((sequence) => {
-        let found = computerMarkIndexes.filter((element) => sequence.includes(element));
+
+    for (let j = 0; j < winningSequences.length; j += 1) {
+        let found = computerMarkIndexes.filter((eachIndex) => winningSequences[j].includes(eachIndex));
         if (found.length === 2) {
-            markIt = sequence.filter((element) => !!found.includes(element));
+            markIt = winningSequences[j].filter((each) => !found.includes(each));
             if (squares[markIt] === '') {
                 squares[markIt] = computerMark;
+                break;
             }
         }
-    });
+    }
     return squares;
 };
 
