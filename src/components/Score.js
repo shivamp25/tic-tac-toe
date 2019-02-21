@@ -23,10 +23,11 @@ const Count = styled.p`
     margin-left: 15px;
 `;
 
-const Score = ({ computerScore, userScore }) => {
+const Score = ({ computerScore, userScore, tieCount }) => {
     Score.propTypes = {
         computerScore: PropTypes.number.isRequired,
-        userScore: PropTypes.number.isRequired
+        userScore: PropTypes.number.isRequired,
+        tieCount: PropTypes.number.isRequired
     };
 
     return (
@@ -34,6 +35,8 @@ const Score = ({ computerScore, userScore }) => {
             <Div>
                 <P> User: </P>
                 <Count className="userScore">{userScore}</Count>
+                <P> Tie: </P>
+                <Count className="tieCount">{tieCount}</Count>
                 <P> Computer: </P>
                 <Count className="computerScore">{computerScore}</Count>
             </Div>
